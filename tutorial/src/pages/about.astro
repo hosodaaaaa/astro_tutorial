@@ -2,10 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 
 const pageTitle = 'About'
+const profile = {
+  name: 'hosodaaaaa',
+  country: 'Japan'
+}
+const dummyTexts = ['あいうえお', 'かきくけこ', 'さしすせそ', 'たちつてと']
 ---
 
 <Layout title={pageTitle}>
-  <main>
+  <main class="about"> 
     <h1>{pageTitle}</h1>
+    <p>私は{profile.name}です。<br>{profile.country}に住んでいます。</p>
+    <ul>
+      {dummyTexts.map((dummyText, i) => <li>{i+1}: {dummyText}</li>)}
+    </ul>
   </main>
 </Layout>
+
+<style>
+  .about h1 {
+    font-size: 30px;
+    color: gray;
+  }
+</style>
